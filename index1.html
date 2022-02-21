@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo1.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <script src="javas1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="caja1">
+
+        <div class="caja2">
+            <h3 class="dentro inicio" style="margin-top: 40px;font-size: 60px;color: aqua;" >Bienvenido</h3>
+            <input class="dentro texto" style="margin:40px;font-size: 25px;padding-left: 10px;" type="text" placeholder="Usuario">
+            <input class="dentro texto" style="margin:-20px 40px 40px 40px;font-size: 25px;padding-left: 10px;" type="password" placeholder="Contraseña">
+            <a href=""><button style="width: 420px;height: 65px;margin-left: 40px;">Login</button></a>
+            <h3 class="dentro pregunta" style="margin-top: 40px;margin-bottom: 10px;color: aqua;" >¿Perdiste tu contraseña?</h3>
+            <h3 class="dentro pregunta" style="color: aqua;">¿No tienes cuenta? <a href="index2.html" style="text-decoration: none;color: aqua;">Registrate</a></h3>
+        
+        </div>
+
+        <div class="caja02">
+          <h3 class="dentro inicio" style="margin-top: 40px;font-size: 40px;color: aqua;" >Bienvenido</h3>
+          <input class="dentro texto" style="margin:40px;font-size: 18px;padding-left: 10px;" type="text" placeholder="Usuario">
+          <input class="dentro texto" style="margin:-20px 40px 40px 40px;font-size: 18px;padding-left: 10px;" type="password" placeholder="Contraseña">
+          <a href=""><button style="width: 200px;height: 35px;margin-left: 40px;">Login</button></a>
+          <h3 class="dentro pregunta" style="margin-top: 40px;margin-bottom: 10px;color: aqua;" >¿Perdiste tu contraseña?</h3>
+          <h3 class="dentro pregunta" style="color: aqua;">¿No tienes cuenta? <a href="index2.html" style="text-decoration: none;color: aqua;">Registrate</a></h3>
+      
+      </div>
+
+
+
+    
+            <a href="index.html" style="text-decoration: none;color: aqua;margin: auto;margin-top: 15px;">Volver</a>
+        
+
+
+
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAl4VZpmV1ZXk0Xpt74Nq3JAqMdgLWec-k",
+        authDomain: "proyectolucho2.firebaseapp.com",
+        projectId: "proyectolucho2",
+        storageBucket: "proyectolucho2.appspot.com",
+        messagingSenderId: "484420152018",
+        appId: "1:484420152018:web:fc10c6aa29249786731b0b"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      import{getDatabase,ref,set,child,get}
+      from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js"
+
+      const db =getDatabase();
+
+      var namebox=document.getElementById("Namebox")
+      var rollbox=document.getElementById("Rollbox")
+      var secbox=document.getElementById("Secbox")
+      var genbox=document.getElementById("Genbox")
+
+      var insBtn=document.getElementById("Insbtn")
+      var selBtn=document.getElementById("Selbtn")
+      var updBtn=document.getElementById("Updbtn")
+      var delBtn=document.getElementById("Delbtn")
+
+      function InserDAta(){
+        set(ref(db, "TheStudents/"+ rollbox.value),{
+          NameOfStd: namebox.value,
+          RollNo: rollbox.value,
+          Section: secbox.value,
+          Gender: genbox.value
+        })
+        .then(()=>{
+          alert("datos almacenados correctamente")
+        })
+        .catch((error)=>{
+           alert("sin éxito, error"+error)
+        })
+        insBtn.addEventListener('click',InserDAta)
+
+
+
+
+
+      }
+
+
+
+
+
+
+    </script>
+
+
+
+
+    
+
+
+
+</body>
+
+  
+</html>

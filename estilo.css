@@ -1,0 +1,81 @@
+body {
+  padding: 0;
+}
+.contenedor1 {
+  display: none;
+}
+.contenedor {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(10, 185, 197);
+}
+.encabezado {
+  height: 10vh;
+  background-color: black;
+  position: relative;
+}
+button {
+  height: 4vh;
+  color: white;
+  background-color: rgb(73, 73, 73);
+  padding: 5px;
+  position: absolute;
+  top: 28px;
+}
+.fas {
+  margin-right: 10px;
+}
+.fa-heart {
+  right: 0;
+}
+.fa-home {
+  right: 130px;
+}
+.fa-user-friends {
+  right: 270px;
+}
+
+.caja1 {
+  color: red;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .contenedor {
+    display: none;
+  }
+  .contenedor1 {
+    display: block;
+  }
+  a {
+    font-size: 12px;
+  }
+  .caja1 {
+    color: red;
+    text-align: center;
+  }
+  .encabezado {
+    height: 8vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+  }
+  .caja01 {
+    font-size: 12px;
+    margin-top: 28px;
+  }
+  button {
+    height: 4vh;
+    color: white;
+    background-color: rgb(73, 73, 73);
+    padding: 5px;
+    position: absolute;
+    top: 80px;
+    margin-right: 0;
+  }
+  .fa-user-friends {
+    left: 10px;
+  }
+}
